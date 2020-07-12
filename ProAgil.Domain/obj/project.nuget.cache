@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "qJqVv6U18z7sgBzwUBQKJ8bIo3kmQg/ZWYBhQbi5yK6/6d2fehEZxR4m/FQDngsB/vr6glb98Yz/4aIOGDS/oQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TIEDT\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\TIEDT\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

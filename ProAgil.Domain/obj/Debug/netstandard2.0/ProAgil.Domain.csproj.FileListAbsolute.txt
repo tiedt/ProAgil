@@ -1,0 +1,17 @@
+C:\Users\TIEDT\Desktop\estudos\ProAgil.Domain\bin\Debug\netstandard2.0\ProAgil.Domain.deps.json
+C:\Users\TIEDT\Desktop\estudos\ProAgil.Domain\bin\Debug\netstandard2.0\ProAgil.Domain.dll
+C:\Users\TIEDT\Desktop\estudos\ProAgil.Domain\bin\Debug\netstandard2.0\ProAgil.Domain.pdb
+C:\Users\TIEDT\Desktop\estudos\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.csprojAssemblyReference.cache
+C:\Users\TIEDT\Desktop\estudos\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.AssemblyInfoInputs.cache
+C:\Users\TIEDT\Desktop\estudos\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.AssemblyInfo.cs
+C:\Users\TIEDT\Desktop\estudos\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.dll
+C:\Users\TIEDT\Desktop\estudos\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.pdb
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Domain\bin\Debug\netstandard2.0\ProAgil.Domain.deps.json
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Domain\bin\Debug\netstandard2.0\ProAgil.Domain.dll
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Domain\bin\Debug\netstandard2.0\ProAgil.Domain.pdb
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.csprojAssemblyReference.cache
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.AssemblyInfoInputs.cache
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.AssemblyInfo.cs
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.csproj.CoreCompileInputs.cache
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.dll
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Domain\obj\Debug\netstandard2.0\ProAgil.Domain.pdb
