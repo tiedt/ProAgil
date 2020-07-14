@@ -26,6 +26,7 @@ export class EventosComponent implements OnInit {
   registerForm: FormGroup;
   modoSalvar = 'post';
   bodyDeletarEvento = '';
+  titulo = 'Eventos';
 
   constructor(private eventoService: EventoService,
     private modalService: BsModalService,
@@ -135,7 +136,7 @@ export class EventosComponent implements OnInit {
         this.eventosFiltrados = this.eventos;
         console.log(_eventos);
       }, error => {
-        console.log(error);
+        this.toastr.error(`Error ao tentar carregar os eventos`)
       }
     );
   }
