@@ -28,24 +28,26 @@ namespace ProAgil.WebAPI.Controllers
             try
             {
                 var eventos = await _repo.GetAllEventosAsync(true);
+
                 var results = _mapper.Map<EventoDto[]>(eventos);
 
                 return Ok(results);
             }
             catch (System.Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou" + ex.Message);
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Banco Dados Falhou {ex.Message}");
             }
         }
 
-        // GET api/values/5
-        [HttpGet("{EventoId}")]
+         [HttpGet("{EventoId}")]
         public async Task<IActionResult> Get(int EventoId)
         {
             try
             {
                 var evento = await _repo.GetAllEventosAsyncById(EventoId, true);
+
                 var results = _mapper.Map<EventoDto>(evento);
+
                 return Ok(results);
             }
             catch (System.Exception)
@@ -54,13 +56,15 @@ namespace ProAgil.WebAPI.Controllers
             }
         }
 
-        [HttpGet("getByTema/{tema}")]
+       [HttpGet("getByTema/{tema}")]
         public async Task<IActionResult> Get(string tema)
         {
             try
             {
                 var eventos = await _repo.GetAllEventosAsyncByTema(tema, true);
+
                 var results = _mapper.Map<EventoDto[]>(eventos);
+
                 return Ok(results);
             }
             catch (System.Exception)
@@ -70,72 +74,75 @@ namespace ProAgil.WebAPI.Controllers
         }
 
         // POST api/values
-        [HttpPost]
+          [HttpPost]
         public async Task<IActionResult> Post(EventoDto model)
         {
             try
             {
                 var evento = _mapper.Map<Evento>(model);
+
                 _repo.Add(evento);
+
                 if (await _repo.SaveChangesAsync())
                 {
-                    return Created($"evento/{model.EventoId}", _mapper.Map<EventoDto>(model));
+                    return Created($"/api/evento/{model.EventoId}", _mapper.Map<EventoDto>(evento));
                 }
-
             }
             catch (System.Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou" + ex.Message);
+                return this.StatusCode(StatusCodes.Status500InternalServerError, 
+                    $"Banco Dados Falhou {ex.Message}");
             }
-            return BadRequest("Deu Ruim");
+
+            return BadRequest();
         }
-        [HttpPut]
-        public async Task<IActionResult> Put(int EvendoId, EventoDto model)
+
+       [HttpPut("{EventoId}")]
+        public async Task<IActionResult> Put(int EventoId, EventoDto model)
         {
             try
             {
-                var evento = await _repo.GetAllEventosAsyncById(EvendoId, false);
+                var evento = await _repo.GetAllEventosAsyncById(EventoId, false);
                 if (evento == null) return NotFound();
-                _mapper.Map(model,evento);
+
+                _mapper.Map(model, evento);
+
                 _repo.Update(evento);
+
                 if (await _repo.SaveChangesAsync())
                 {
-                    return Created($"evento/{model.EventoId}", _mapper.Map<EventoDto>(model));
+                    return Created($"/api/evento/{model.EventoId}", _mapper.Map<EventoDto>(evento));
                 }
-
             }
             catch (System.Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou" + ex.Message);
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou " + ex.Message);
             }
-            return BadRequest("Deu Ruim");
+
+            return BadRequest();
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(int EvendoId)
+       [HttpDelete("{EventoId}")]
+        public async Task<IActionResult> Delete(int EventoId)
         {
             try
             {
-                var evento = await _repo.GetAllEventosAsyncById(EvendoId, false);
+                var evento = await _repo.GetAllEventosAsyncById(EventoId, false);
                 if (evento == null) return NotFound();
+
                 _repo.Delete(evento);
+
                 if (await _repo.SaveChangesAsync())
                 {
                     return Ok();
                 }
-
             }
             catch (System.Exception)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco Dados Falhou");
             }
-            return BadRequest("Deu Ruim");
-        }
 
-        // PUT api/values/5
-        /* [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        } */
+            return BadRequest();
+        }
     }
 }

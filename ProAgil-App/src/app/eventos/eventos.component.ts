@@ -27,6 +27,7 @@ export class EventosComponent implements OnInit {
   modoSalvar = 'post';
   bodyDeletarEvento = '';
   titulo = 'Eventos';
+  idEvento: number;
 
   constructor(private eventoService: EventoService,
     private modalService: BsModalService,
@@ -61,7 +62,7 @@ export class EventosComponent implements OnInit {
   editarEvento(evento: Evento, template: any) {
     this.modoSalvar = 'put';
     this.openModal(template);
-    this.evento = Object.assign({}, evento);
+    this.idEvento = evento.eventoId;
     this.registerForm.patchValue(evento);
   }
   novoEvento(template: any) {
@@ -84,13 +85,12 @@ export class EventosComponent implements OnInit {
           this.toastr.success('Deletado com Sucesso!');
         }, error => {
           this.toastr.error('Erro ao Tentar deletar!');
-          console.log(error);
         }
     );
   }
   salvarAlteracao(template: any) {
     if (this.registerForm.valid) {
-      if(this.modoSalvar === 'post'){
+      if (this.modoSalvar === 'post') {
         this.evento = Object.assign({}, this.registerForm.value);
         this.eventoService.postEvento(this.evento).subscribe(
           (novoEvento: Evento) => {
@@ -98,24 +98,21 @@ export class EventosComponent implements OnInit {
             this.getEventos();
             this.toastr.success('Inserido com Sucesso!');
           }, error => {
-            this.toastr.error('Erro ao inserir!' + {error});
-            console.log(error);
+            this.toastr.error(`Erro ao Inserir: ${error}`);
           }
         );
       } else {
-        this.evento = Object.assign({eventoId: this.evento.eventoId}, this.registerForm.value);
+        this.evento = Object.assign({eventoId: this.idEvento}, this.registerForm.value);
         this.eventoService.putEvento(this.evento).subscribe(
-          () => { 
+          () => {
             template.hide();
             this.getEventos();
             this.toastr.success('Editado com Sucesso!');
           }, error => {
-            console.log(error);
-            this.toastr.error('Erro ao editar!'+ {error});
+            this.toastr.error(`Erro ao Editar: ${error}`);
           }
         );
       }
-   
     }
   }
   validation() {
@@ -134,7 +131,6 @@ export class EventosComponent implements OnInit {
       (_eventos: Evento[]) => {
         this.eventos = _eventos;
         this.eventosFiltrados = this.eventos;
-        console.log(_eventos);
       }, error => {
         this.toastr.error(`Error ao tentar carregar os eventos`)
       }
