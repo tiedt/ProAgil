@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ProAgil.Domain;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext;
+using ProAgil.Domain.Identity;
 
 namespace ProAgil.Repository
 {
@@ -20,14 +22,14 @@ namespace ProAgil.Repository
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<PapeisUsuario>(papeisUsuario =>
              {
-                 papeisUsuario.Haskey(pu => new {pu.UsuarioId, pu.PapelId});
+                 papeisUsuario.HasKey(pu => new {pu.UserId, pu.RoleId});
                  papeisUsuario.HasOne(pu => pu.Papeis)
                  .WithMany(p => p.PapeisUsuario)
-                 .HasForeignKey(papeisUsuario => papeisUsuario.PapelId).IsRequired();
+                 .HasForeignKey(papeisUsuario => papeisUsuario.RoleId).IsRequired();
 
                  papeisUsuario.HasOne(pu => pu.Usuario)
                  .WithMany(p => p.PapeisUsuario)
-                 .HasForeignKey(papeisUsuario => papeisUsuario.UsuarioId).IsRequired();
+                 .HasForeignKey(papeisUsuario => papeisUsuario.UserId).IsRequired();
              });
             modelBuilder.Entity<PalestranteEvento>()
             .HasKey(PE => new {PE.EventoId, PE.PalestranteId});

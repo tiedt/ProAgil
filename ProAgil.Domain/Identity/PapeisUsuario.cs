@@ -1,4 +1,5 @@
-using Microsoft.AspNetCore.IdentityUser;
+using Microsoft.AspNetCore.Identity;
+
 namespace ProAgil.Domain.Identity
 {
     public class PapeisUsuario : IdentityUserRole<int>

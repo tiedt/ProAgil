@@ -1,4 +1,7 @@
-using Microsoft.AspNetCore.IdentityUser;
+using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace ProAgil.Domain.Identity
 {
     public class Usuario : IdentityUser<int>
