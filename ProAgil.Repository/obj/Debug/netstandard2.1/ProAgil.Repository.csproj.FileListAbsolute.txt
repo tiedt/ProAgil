@@ -9,3 +9,15 @@ C:\Users\TIEDT\Desktop\ProAgil\ProAgil\ProAgil.Repository\obj\Debug\netstandard2
 C:\Users\TIEDT\Desktop\ProAgil\ProAgil\ProAgil.Repository\obj\Debug\netstandard2.1\ProAgil.Repository.csproj.CopyComplete
 C:\Users\TIEDT\Desktop\ProAgil\ProAgil\ProAgil.Repository\obj\Debug\netstandard2.1\ProAgil.Repository.dll
 C:\Users\TIEDT\Desktop\ProAgil\ProAgil\ProAgil.Repository\obj\Debug\netstandard2.1\ProAgil.Repository.pdb
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\bin\Debug\netstandard2.1\ProAgil.Repository.deps.json
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\bin\Debug\netstandard2.1\ProAgil.Repository.dll
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\bin\Debug\netstandard2.1\ProAgil.Repository.pdb
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\bin\Debug\netstandard2.1\ProAgil.Domain.dll
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\bin\Debug\netstandard2.1\ProAgil.Domain.pdb
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\obj\Debug\netstandard2.1\ProAgil.Repository.csprojAssemblyReference.cache
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\obj\Debug\netstandard2.1\ProAgil.Repository.AssemblyInfoInputs.cache
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\obj\Debug\netstandard2.1\ProAgil.Repository.AssemblyInfo.cs
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\obj\Debug\netstandard2.1\ProAgil.Repository.csproj.CoreCompileInputs.cache
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\obj\Debug\netstandard2.1\ProAgil.Repository.csproj.CopyComplete
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\obj\Debug\netstandard2.1\ProAgil.Repository.dll
+C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.Repository\obj\Debug\netstandard2.1\ProAgil.Repository.pdb
