@@ -34,8 +34,8 @@
   <tbody *ngIf="eventos && eventos.length">
     <tr *ngFor="let evento of eventosFiltrados">
       <td>
-        <img *ngIf="mostrarImagem" src="http://localhost:5001/img/{{evento.imagemURL}}" [style.width.px]="imagemLargura"
-          [style.margin.px]="imagemMargem">
+        <img *ngIf="mostrarImagem" src="http://localhost:5000/resources/images/{{evento.imagemURL}}?_ts={{dataAtual}}"
+          [style.width.px]="imagemLargura" [style.margin.px]="imagemMargem">
       </td>
       <td>{{evento.eventoId}}</td>
       <td>{{evento.tema}}</td>
@@ -115,7 +115,8 @@
             </div>
             <div class="form-group col-md-4">
               <label>Data e Hora</label>
-              <input value="{{dataEvento | DateTimeFormatPipe}}" [(ngModel)]="dataEvento" type="text" class="form-control" bsDatepicker  [bsConfig]="{ dateInputFormat : 'DD/MM/YYYY hh:mm' }"
+              <input bsDatepicker value="{{dataEvento | DateTimeFormatPipe}}" [(ngModel)]="dataEvento" type="text"
+                class="form-control" [bsConfig]="{ dateInputFormat : 'DD/MM/YYYY hh:mm' }"
                 [ngClass]="{'is-invalid': registerForm.get('dataEvento').errors && registerForm.get('dataEvento').touched}"
                 formControlName="dataEvento">
               <div *ngIf="registerForm.get('dataEvento').hasError('required') && registerForm.get('dataEvento').touched"
@@ -141,8 +142,19 @@
             </div>
             <div class="form-group col-md-9">
               <label>Imagem</label>
-              <input [ngClass]="{'is-invalid': registerForm.get('imagemURL').errors && registerForm.get('imagemURL').touched}"
-                type="text" class="form-control is-invalid" formControlName="imagemURL">
+              <table>
+                <tr>
+                  <td>
+                    <button class="btn btn-success" (click)="file.click()">
+                      Enviar Imagem
+                    </button>
+                    <input #file
+                      [ngClass]="{'is-invalid': registerForm.get('imagemURL').errors && registerForm.get('imagemURL').touched}"
+                      type="file" class="form-control is-invalid" formControlName="imagemURL" placeholder=""
+                      (change)="onChangeFile($event)" style="display: none;">
+                  </td>
+                </tr>
+              </table>
               <div *ngIf="registerForm.get('imagemURL').hasError('required') && registerForm.get('imagemURL').touched"
                 class="invalid-feedback">
                 Imagem é obrigatório.
@@ -188,27 +200,27 @@
 </div>
 
 <div bsModal #confirm="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
-	<div class="modal-dialog modal-sm">
-  		<div class="modal-content">
-    		<div class="modal-header">
-      			<h4 class="modal-title pull-left">
-        			Deletando Evento
-      			</h4>
-      			<button type="button" class="close pull-right" (click)="confirm.hide()" aria-label="Close">
-        			<span aria-hidden="true">&times;</span>
-      			</button>
-    		</div>
-    		<div class="modal-body">
-      			<p>{{bodyDeletarEvento}}</p>
-    		</div>    
-    		<div class="modal-footer btn-group d-flex">      
-      			<button type="button" class="btn btn-outline-primary" (click)="confirm.hide()">
-        			CENCELAR
-      			</button>
-      			<button type="button" class="btn btn-outline-danger" (click)="confirmeDelete(confirm)">
-          			DELETAR
-        		</button>
-    		</div>
-  		</div>
-	</div>
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">
+          Deletando Evento
+        </h4>
+        <button type="button" class="close pull-right" (click)="confirm.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{bodyDeletarEvento}}</p>
+      </div>
+      <div class="modal-footer btn-group d-flex">
+        <button type="button" class="btn btn-outline-primary" (click)="confirm.hide()">
+          CENCELAR
+        </button>
+        <button type="button" class="btn btn-outline-danger" (click)="confirmeDelete(confirm)">
+          DELETAR
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

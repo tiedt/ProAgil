@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebAPI\\ProAgil.WebAPI.csproj": {}
+    "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebApi\\ProAgil.WebAPI.csproj": {}
   },
   "projects": {
     "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
@@ -36,6 +36,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -93,6 +97,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.2, )"
@@ -122,14 +130,14 @@
         }
       }
     },
-    "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebAPI\\ProAgil.WebAPI.csproj": {
+    "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebApi\\ProAgil.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebAPI\\ProAgil.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebApi\\ProAgil.WebAPI.csproj",
         "projectName": "ProAgil.WebAPI",
-        "projectPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebAPI\\ProAgil.WebAPI.csproj",
+        "projectPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebApi\\ProAgil.WebAPI.csproj",
         "packagesPath": "C:\\Users\\TIEDT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\TIEDT\\AppData\\Roaming\\NuGet\\NuGet.Config"

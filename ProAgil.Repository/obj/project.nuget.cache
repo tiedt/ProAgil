@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "F1SQ+KTuD1RaWukYHxNsbxXSnz8CnabM0rWIJP+d0vsp/zN9xUByl/vNemKbG6H1JDveQKCkjJr1XMEr08BL2A==",
-  "success": true,
+  "dgSpecHash": "mzHpLrLm5V6XGi7ElxdzZdIm10Si6CeORmAPpEulKyc7EpCPskEzbizAKgstNbsvGpFq4HQ5lplu0Q9IkDFG7A==",
+  "success": false,
   "projectFilePath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\TIEDT\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.6\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.6.nupkg.sha512",
     "C:\\Users\\TIEDT\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\TIEDT\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\TIEDT\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -117,5 +118,15 @@
     "C:\\Users\\TIEDT\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\TIEDT\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1202",
+      "level": "Error",
+      "message": "O pacote Microsoft.AspNetCore.Identity.EntityFrameworkCore 3.1.6 não é compatível com netstandard2.0 (.NETStandard,Version=v2.0). O pacote Microsoft.AspNetCore.Identity.EntityFrameworkCore 3.1.6 dá suporte a:\r\n  - netcoreapp3.1 (.NETCoreApp,Version=v3.1)\r\n  - netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

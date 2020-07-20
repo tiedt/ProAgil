@@ -1,11 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "qJqVv6U18z7sgBzwUBQKJ8bIo3kmQg/ZWYBhQbi5yK6/6d2fehEZxR4m/FQDngsB/vr6glb98Yz/4aIOGDS/oQ==",
-  "success": true,
+  "dgSpecHash": "fx4gyfgnS80LlCLcyzr9RiK6FrrRbrYOzH0jPSdhyaq1aNZhnvyd1HuuWBxtp5GejPaBB+WTuZABRB0rnK3LCQ==",
+  "success": false,
   "projectFilePath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\TIEDT\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.6\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.6.nupkg.sha512",
     "C:\\Users\\TIEDT\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\TIEDT\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1202",
+      "level": "Error",
+      "message": "O pacote Microsoft.AspNetCore.Identity.EntityFrameworkCore 3.1.6 não é compatível com netstandard2.0 (.NETStandard,Version=v2.0). O pacote Microsoft.AspNetCore.Identity.EntityFrameworkCore 3.1.6 dá suporte a:\r\n  - netcoreapp3.1 (.NETCoreApp,Version=v3.1)\r\n  - netstandard2.1 (.NETStandard,Version=v2.1)",
+      "libraryId": "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }
