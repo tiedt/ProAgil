@@ -203,3 +203,10 @@ C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.WebApi\bin\Debug\netcoreapp3.1\Mic
 C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\TIEDT\Desktop\Rennã\ProAgil\ProAgil.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\TIEDT\Desktop\ProAgil\ProAgil\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\TIEDT\Desktop\ProAgil\ProAgil\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\TIEDT\Desktop\ProAgil\ProAgil\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\TIEDT\Desktop\ProAgil\ProAgil\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\TIEDT\Desktop\ProAgil\ProAgil\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\TIEDT\Desktop\ProAgil\ProAgil\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\TIEDT\Desktop\ProAgil\ProAgil\ProAgil.WebAPI\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll

@@ -1,28 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebApi\\ProAgil.WebAPI.csproj": {}
+    "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.WebAPI\\ProAgil.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+    "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
         "projectName": "ProAgil.Domain",
-        "projectPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
+        "projectPath": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj",
         "packagesPath": "C:\\Users\\TIEDT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Domain\\obj\\",
+        "outputPath": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\TIEDT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\TIEDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,36 +63,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
+    "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
         "projectName": "ProAgil.Repository",
-        "projectPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
+        "projectPath": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj",
         "packagesPath": "C:\\Users\\TIEDT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Repository\\obj\\",
+        "outputPath": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\TIEDT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\TIEDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
-                "projectPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
+              "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+                "projectPath": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
               }
             }
           }
@@ -130,39 +138,43 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebApi\\ProAgil.WebAPI.csproj": {
+    "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.WebAPI\\ProAgil.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebApi\\ProAgil.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.WebAPI\\ProAgil.WebAPI.csproj",
         "projectName": "ProAgil.WebAPI",
-        "projectPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebApi\\ProAgil.WebAPI.csproj",
+        "projectPath": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.WebAPI\\ProAgil.WebAPI.csproj",
         "packagesPath": "C:\\Users\\TIEDT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.WebApi\\obj\\",
+        "outputPath": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\TIEDT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\TIEDT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
-                "projectPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
+              "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj": {
+                "projectPath": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Domain\\ProAgil.Domain.csproj"
               },
-              "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
-                "projectPath": "C:\\Users\\TIEDT\\Desktop\\Rennã\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj"
+              "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj": {
+                "projectPath": "C:\\Users\\TIEDT\\Desktop\\ProAgil\\ProAgil\\ProAgil.Repository\\ProAgil.Repository.csproj"
               }
             }
           }
@@ -179,6 +191,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.6, )"
             },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
@@ -223,7 +239,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
