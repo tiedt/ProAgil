@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ProAgil.Repository;
+using ProAgil.Respository;
 
 namespace ProAgil.Repository.Migrations
 {
@@ -138,7 +138,7 @@ namespace ProAgil.Repository.Migrations
                     b.ToTable("Eventos");
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Identity.Papeis", b =>
+            modelBuilder.Entity("ProAgil.Domain.Identity.Role", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -167,22 +167,7 @@ namespace ProAgil.Repository.Migrations
                     b.ToTable("AspNetRoles");
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Identity.PapeisUsuario", b =>
-                {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "RoleId");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetUserRoles");
-                });
-
-            modelBuilder.Entity("ProAgil.Domain.Identity.Usuario", b =>
+            modelBuilder.Entity("ProAgil.Domain.Identity.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -203,14 +188,14 @@ namespace ProAgil.Repository.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(150)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NomeCompleto")
-                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(256)")
@@ -250,6 +235,21 @@ namespace ProAgil.Repository.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("ProAgil.Domain.Identity.UserRole", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles");
                 });
 
             modelBuilder.Entity("ProAgil.Domain.Lote", b =>
@@ -356,7 +356,7 @@ namespace ProAgil.Repository.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Identity.Papeis", null)
+                    b.HasOne("ProAgil.Domain.Identity.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -365,7 +365,7 @@ namespace ProAgil.Repository.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Identity.Usuario", null)
+                    b.HasOne("ProAgil.Domain.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -374,7 +374,7 @@ namespace ProAgil.Repository.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Identity.Usuario", null)
+                    b.HasOne("ProAgil.Domain.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -383,23 +383,23 @@ namespace ProAgil.Repository.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Identity.Usuario", null)
+                    b.HasOne("ProAgil.Domain.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ProAgil.Domain.Identity.PapeisUsuario", b =>
+            modelBuilder.Entity("ProAgil.Domain.Identity.UserRole", b =>
                 {
-                    b.HasOne("ProAgil.Domain.Identity.Papeis", "Papeis")
-                        .WithMany("PapeisUsuario")
+                    b.HasOne("ProAgil.Domain.Identity.Role", "Role")
+                        .WithMany("UserRoles")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProAgil.Domain.Identity.Usuario", "Usuario")
-                        .WithMany("PapeisUsuario")
+                    b.HasOne("ProAgil.Domain.Identity.User", "User")
+                        .WithMany("UserRoles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

@@ -26,6 +26,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ProAgil.Domain.Identity;
 using ProAgil.Repository;
+using ProAgil.Respository;
 
 namespace ProAgil.WebAPI
 {
@@ -42,18 +43,19 @@ namespace ProAgil.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ProAgilContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            IdentityBuilder builder = services.AddIdentityCore<Usuario>(options => {
+            IdentityBuilder builder = services.AddIdentityCore<User>(options => {
                 options.Password.RequireDigit = false; //números especiais
                 options.Password.RequireNonAlphanumeric = false; // nada de alfanúmerico
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 4;
             });
-            builder = new IdentityBuilder(builder.UserType, typeof(Papeis), builder.Services);
+            
+            builder = new IdentityBuilder(builder.UserType, typeof(Role), builder.Services);
             builder.AddEntityFrameworkStores<ProAgilContext>();
-            builder.AddRoleValidator<RoleValidator<Papeis>>();
-            builder.AddRoleManager<RoleManager<Papeis>>();
-            builder.AddSignInManager<SignInManager<Usuario>>();
+            builder.AddRoleValidator<RoleValidator<Role>>();
+            builder.AddRoleManager<RoleManager<Role>>();
+            builder.AddSignInManager<SignInManager<User>>();
 
             services.AddScoped<IProAgilRepository, ProAgilRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
