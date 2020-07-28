@@ -44,7 +44,6 @@ namespace ProAgil.WebAPI.Controllers
     }
 
     [HttpPost("Register")]
-    [AllowAnonymous]
     public async Task<IActionResult> Register(UserDto userDto)
     {
         try

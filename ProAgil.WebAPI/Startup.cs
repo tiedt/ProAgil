@@ -45,14 +45,15 @@ namespace ProAgil.WebAPI
         {
             services.AddDbContext<ProAgilContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            IdentityBuilder builder = services.AddIdentityCore<User>(options => {
+            IdentityBuilder builder = services.AddIdentityCore<User>(options =>
+            {
                 options.Password.RequireDigit = false; //números especiais
                 options.Password.RequireNonAlphanumeric = false; // nada de alfanúmerico
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 4;
             });
-            
+
             builder = new IdentityBuilder(builder.UserType, typeof(Role), builder.Services);
             builder.AddEntityFrameworkStores<ProAgilContext>();
             builder.AddRoleValidator<RoleValidator<Role>>();
@@ -61,7 +62,7 @@ namespace ProAgil.WebAPI
 
             //services.AddScoped<IProAgilRepository, ProAgilRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options => 
+                .AddJwtBearer(options =>
                     {
                         options.TokenValidationParameters = new TokenValidationParameters
                         {
@@ -73,42 +74,62 @@ namespace ProAgil.WebAPI
                         };
                     }
                 );
-            services.AddMvc(options => {
-                    var policy = new AuthorizationPolicyBuilder()
-                        .RequireAuthenticatedUser()
-                        .Build();
-                    options.Filters.Add(new AuthorizeFilter(policy));
-                })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            services.AddMvc(options =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser()
+                    .Build();
+                options.Filters.Add(new AuthorizeFilter(policy));
+            })
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .Services.AddControllers()
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling =
                  Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddScoped<IProAgilRepository, ProAgilRepository>();
-            services.AddAutoMapper(typeof(Startup));            
+            services.AddAutoMapper(typeof(Startup));
             services.AddCors();
 
             // Configurando o serviço de documentação do Swagger
             services.AddSwaggerGen(c =>
          {
-              c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-              { 
-               Description = Configuration["Autenticacao:Description"],
-               Name = Configuration["Autenticacao:Name"],
-               In = ParameterLocation.Header,
-               Type = SecuritySchemeType.ApiKey
-              });
-              c.OperationFilter<SecurityRequirementsOperationFilter>(); 
-              c.SwaggerDoc("v1", new OpenApiInfo
-              {
-               Title = Configuration["App:Title"],
-               Version = Configuration["App:Version"],
-               Description = Configuration["App:Description"]
-              });
-            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            c.IncludeXmlComments(xmlPath);
-        });
+             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+             {
+                 Description = Configuration["Autenticacao:Description"],
+                 Name = Configuration["Autenticacao:Name"],
+                 In = ParameterLocation.Header,
+                 Type = SecuritySchemeType.ApiKey,
+                 Scheme = "Bearer",
+             });
+             c.OperationFilter<SecurityRequirementsOperationFilter>();
+             c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+{
+    {
+        new OpenApiSecurityScheme
+        {
+            Reference = new OpenApiReference
+            {
+                Type = ReferenceType.SecurityScheme,
+                Id = "Bearer"
+            },
+            Scheme = "oauth2",
+            Name = "Bearer",
+            In = ParameterLocation.Header,
+
+        },
+        new List<string>()
+    }
+});
+             c.SwaggerDoc("v1", new OpenApiInfo
+             {
+                 Title = Configuration["App:Title"],
+                 Version = Configuration["App:Version"],
+                 Description = Configuration["App:Description"]
+             });
+             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+             c.IncludeXmlComments(xmlPath);
+         });
 
 
         }
@@ -119,7 +140,9 @@ namespace ProAgil.WebAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            } else {
+            }
+            else
+            {
                 //app.UseHsts;
             }
             app.UseAuthentication();
@@ -127,8 +150,9 @@ namespace ProAgil.WebAPI
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseRouting();
             app.UseStaticFiles();
-            app.UseStaticFiles(new StaticFileOptions(){
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),@"Resources")),
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Resources")),
                 RequestPath = new PathString("/Resources")
             });
             app.UseSwagger();
@@ -136,7 +160,7 @@ namespace ProAgil.WebAPI
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Api V1");
             });
-           // app.UseAuthorization();
+            // app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
