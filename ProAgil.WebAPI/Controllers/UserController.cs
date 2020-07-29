@@ -17,7 +17,7 @@ using ProAgil.WebAPI.Dtos;
 
 namespace ProAgil.WebAPI.Controllers
 {
-  [Route("api/[controller]")]
+  [Route("/[controller]")]
   [ApiController]
   public class UserController : ControllerBase
   {
@@ -44,6 +44,7 @@ namespace ProAgil.WebAPI.Controllers
     }
 
     [HttpPost("Register")]
+    [AllowAnonymous]
     public async Task<IActionResult> Register(UserDto userDto)
     {
         try
