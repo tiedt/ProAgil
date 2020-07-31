@@ -23,6 +23,7 @@
     "angular-jwt": "github:auth0/angular-jwt",
     "bootstrap": "^4.4.1",
     "ngx-bootstrap": "^5.6.1",
+    "ngx-mask": "^9.1.2",
     "ngx-toastr": "^10.1.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

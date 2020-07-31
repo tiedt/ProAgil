@@ -15,12 +15,11 @@ export class LoginComponent implements OnInit {
   model: any = {};
   constructor(private authService: AuthService
     , public router: Router
-    , public fb: FormBuilder
     , private toastr: ToastrService) {
   }
 
   ngOnInit() {
-    if(localStorage.getItem('token') !== null) {
+    if(localStorage.getItem('token') != null) {
       this.router.navigate(['/dashboard']);
     }
   }
