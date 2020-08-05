@@ -25,6 +25,7 @@ import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { EventoEditComponent } from './eventos/evento-edit/evento-edit.component';
+import { NgxCurrencyModule } from "ngx-currency";
 
 @NgModule({
    declarations: [
@@ -57,7 +58,8 @@ import { EventoEditComponent } from './eventos/evento-edit/evento-edit.component
       TabsModule.forRoot(),
       NgxMaskModule.forRoot(),
       BrowserAnimationsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      NgxCurrencyModule
    ],
    providers: [
       EventoService,
