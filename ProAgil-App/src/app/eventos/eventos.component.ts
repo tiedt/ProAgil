@@ -30,6 +30,7 @@ export class EventosComponent implements OnInit {
   idEvento: number;
   file: File;
   fileNameToUpdate: string;
+  dataEvento: string;
   dataAtual: string;
 
 

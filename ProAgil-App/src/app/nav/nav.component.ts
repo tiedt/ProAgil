@@ -20,6 +20,9 @@ export class NavComponent implements OnInit {
   entrar(){
     this.router.navigate(['/user/login']);
   }
+  showMenu() {
+    return this.router.url !== '/user/login';
+  }
   loggedIn() {
     return this.authService.loggedIn();
   }
